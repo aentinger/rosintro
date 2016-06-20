@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>rosintro</name>
+  <version>0.0.1</version>
+  <description>This package contains example code for explaining the very basic concepts of ROS.</description>
+
+  <maintainer email="cto@lxrobotics.com">Alexander Entinger</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">https://github.com/lxrobotics/rosintro</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+
+  <export></export>
+
+</package>
