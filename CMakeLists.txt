@@ -33,13 +33,12 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ executable
-# add_executable(rosintro_node src/rosintro_node.cpp)
+add_executable(tickle_service_server_node 
+  src/tickle_service_server/main.cpp)
 
-## Specify libraries to link a library or executable target against
-# target_link_libraries(rosintro_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(tickle_service_server_node
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
