@@ -4,8 +4,6 @@
 
 #include <stdlib.h>
 
-#include <iostream>
-
 #include <ros/ros.h>
 #include <ros/console.h>
 
@@ -28,6 +26,8 @@ int main(int argc, char **argv)
   ros::NodeHandle node_handle;
 
   ros::ServiceServer tickle_service_server = node_handle.advertiseService("/tickle", tickleRequestReceived);
+
+  ros::spin();
   
   return EXIT_SUCCESS;
 }
