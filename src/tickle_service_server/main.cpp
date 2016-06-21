@@ -4,6 +4,8 @@
 
 #include <stdlib.h>
 
+#include <sstream>
+
 #include <ros/ros.h>
 #include <ros/console.h>
 
@@ -38,10 +40,20 @@ int main(int argc, char **argv)
 
 bool tickleRequestReceived(std_srvs::Trigger::Request &req, std_srvs::Trigger::Response &res)
 {
-  res.success = true;
-  res.message = "Hihi";
+  static size_t tickle_cnt = 0;
 
-  ROS_INFO("Service server was just tickled");
+  ROS_INFO("Tickle service server was just tickled");
+
+  tickle_cnt++;
+
+  std::stringstream tickle_stream;
+  for(size_t t = 0; t < tickle_cnt; t++)
+  {
+    tickle_stream << "Hi";
+  }
+
+  res.success = true;
+  res.message = tickle_stream.str();
 
   return res.success;
 }

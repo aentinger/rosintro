@@ -65,7 +65,11 @@ void handleTickle(ros::ServiceClient &tickle_service_client)
 
   if(tickle_service_client.call(srv))
   {
-    ROS_INFO("Service server responds with '%s'", srv.response.message.c_str());
+    ROS_INFO("Tickle service server responds with '%s'", srv.response.message.c_str());
+  }
+  else
+  {
+    ROS_ERROR("Could not reach tickle service server");
   }
 }
 
