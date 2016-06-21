@@ -7,13 +7,13 @@
 #include <ros/ros.h>
 #include <ros/console.h>
 
-#include <std_srvs/Empty.h>
+#include <std_srvs/Trigger.h>
 
 /**************************************************************************************
  * PROTOTYPES
  **************************************************************************************/
 
-bool tickleRequestReceived(std_srvs::Empty::Request &req, std_srvs::Empty::Response &res); 
+bool tickleRequestReceived(std_srvs::Trigger::Request &req, std_srvs::Trigger::Response &res); 
 
 /**************************************************************************************
  * MAIN
@@ -36,7 +36,12 @@ int main(int argc, char **argv)
  * OUR FUNCTIONS
  **************************************************************************************/
 
-bool tickleRequestReceived(std_srvs::Empty::Request &req, std_srvs::Empty::Response &res)
+bool tickleRequestReceived(std_srvs::Trigger::Request &req, std_srvs::Trigger::Response &res)
 {
-  ROS_INFO("Hihi");
+  res.success = true;
+  res.message = "Hihi";
+
+  ROS_INFO("Service server was just tickled");
+
+  return res.success;
 }

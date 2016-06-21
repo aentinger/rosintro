@@ -40,6 +40,13 @@ target_link_libraries(tickle_service_server_node
   ${catkin_LIBRARIES}
 )
 
+add_executable(tickle_service_client_node 
+  src/tickle_service_client/main.cpp)
+
+target_link_libraries(tickle_service_client_node
+  ${catkin_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############
