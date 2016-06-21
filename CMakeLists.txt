@@ -33,6 +33,15 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+# point_publisher_node
+
+add_executable(point_publisher_node 
+  src/point_publisher/main.cpp)
+
+target_link_libraries(point_publisher_node 
+  ${catkin_LIBRARIES}
+)
+
 # point_subscriber_node
 
 add_executable(point_subscriber_node 
